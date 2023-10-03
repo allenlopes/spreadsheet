@@ -10,6 +10,7 @@ body {
 .page-actions-cont {
     height: 3rem;
     background-color: lightgreen;
+    display: flex; /* We have used display as flex, so that the text aligns in one line */
 }
 
 .cellprop-actions-cont {
