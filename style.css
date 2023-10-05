@@ -9,8 +9,14 @@ body {
 
 .page-actions-cont {
     height: 3rem;
-    background-color: lightgreen;
+    background-color: #218c74;
     display: flex; /* We have used display as flex, so that the text aligns in one line */
+    align-items: flex-end;
+}
+
+.page-action {
+    margin: 0.5rem;
+    color: #f1f2f6;
 }
 
 .cellprop-actions-cont {
