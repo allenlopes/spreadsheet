@@ -7,6 +7,8 @@ body {
     margin: 0;
 }
 
+
+/* Page actions container styling i.e Row no. 1 */
 .page-actions-cont {
     height: 3rem;
     background-color: #218c74;
@@ -19,16 +21,44 @@ body {
     color: #f1f2f6;
 }
 
+
+/* Cell properties styling i.e Row no. 2 */
 .cellprop-actions-cont {
     height: 3rem;
     background-color: lightsalmon;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
 }
 
+.cellprop-actions-cont > * { /* "> *" - iska matlab cellprop-actions-cont mai jo bhi aayega uske styling */
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.cellprop-actions-cont > select {
+    border: none;
+    border-radius: 3px;
+    outline: none; /* outline matlb jab ham woh font-family dropdown par click karte hai tab uspar ek black border aati hai jisko hamne none kiya hai */
+}
+
+.font-family-prop {
+    padding: 0.2rem;
+}
+
+.font-size-prop {
+    padding: 0.2rem;
+}
+
+
+/* Formula actions container styling i.e Row no. 3 */
 .formula-actions-cont {
     height: 3rem;
     background-color: lightblue;
 }
 
+
+/* Sheet actions container styling i.e Last Row  */
 .sheet-actions-cont {
     height: 3rem;
     background-color: lightcoral;
