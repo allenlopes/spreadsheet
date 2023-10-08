@@ -62,7 +62,27 @@ body {
 .sheet-actions-cont {
     height: 3rem;
     background-color: lightcoral;
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
+
+.sheet-actions-cont > * {
+    display: inline-block;
+}
+
+.sheet-add-icon {
+    width: 2vw;
+}
+
+.sheets-folder-cont {
+    height: 2rem;
+    width: 5rem;
+    background-color: yellow;
+    width: calc(100vw - 2vw);
+}
+
 
 .grid-cont {
     height: calc( 100vh - 3rem - 3rem - 3rem - 3rem);
