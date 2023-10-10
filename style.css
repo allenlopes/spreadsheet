@@ -57,6 +57,26 @@ body {
     height: 3rem;
     background-color: lightblue;
     padding-left: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.formula-actions-cont > * {
+    display: inline-block;
+    margin-right: 0.7rem;
+}
+
+.address-bar {
+    width: 5rem;
+}
+
+.formula-bar {
+    width: calc( 100vw - 5rem);
+}
+
+.formula-actions-cont > input {
+    border: none;
+    outline: none;
 }
 
 
