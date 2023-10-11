@@ -54,8 +54,8 @@ body {
 
 /* Formula actions container styling i.e Row no. 3 */
 .formula-actions-cont {
-    height: 3rem;
-    background-color: lightblue;
+    height: 2rem;
+    background-color: #ecf0f1;
     padding-left: 1rem;
     display: flex;
     align-items: center;
@@ -66,17 +66,19 @@ body {
     margin-right: 0.7rem;
 }
 
+
 .address-bar {
     width: 5rem;
 }
 
 .formula-bar {
-    width: calc( 100vw - 5rem);
+    width: calc( 100vw - 5rem - 0.7rem - 0.7rem - 0.7rem);
 }
 
 .formula-actions-cont > input {
     border: none;
     outline: none;
+    height: 70%;
 }
 
 
@@ -116,5 +118,5 @@ body {
 
 
 .grid-cont {
-    height: calc( 100vh - 3rem - 3rem - 3rem - 3rem);
+    height: calc( 100vh - 3rem - 3rem - 2rem - 3rem);
 }
