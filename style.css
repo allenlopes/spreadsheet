@@ -120,3 +120,9 @@ body {
 .grid-cont {
     height: calc( 100vh - 3rem - 3rem - 2rem - 3rem);
 }
+
+.top-left-dummy-box {
+    height: 2rem;
+    width: 2rem;
+    background-color: #747d8c;
+}
