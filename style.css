@@ -131,19 +131,19 @@ body {
 .address-col-cont {
     height: 10rem;
     width: 2rem;
-    background-color: lightblue;
+    /* background-color: lightblue; */
 }
 
 .address-row-cont {
     height: 2rem;
-    background-color: lightpink;
+    /* background-color: lightpink; */
 }
 
 .cells-cont {
     position: absolute;
     top: 0;
     left: 2rem;
-    background-color: lightgreen;
+    /* background-color: lightgreen; */
     width: 10rem;
     height: 10rem;
 }
