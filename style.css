@@ -148,3 +148,10 @@ body {
     width: 10rem;
     height: 10rem;
 }
+
+.address-col {
+    height: 2rem;
+    width: 2rem;
+    text-align: center;
+    border: 1px solid #dfe4ea;
+}
