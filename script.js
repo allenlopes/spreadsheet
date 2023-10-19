@@ -15,6 +15,7 @@ for (let i = 0; i < rows; i++) { // here we have set i = 0, 0 < 100,
     addressColCont.appendChild(addressCol);
 }
 
+// This for loop is for the grid's first row which has various columns from A to Z.
 for(let i = 0; i < cols; i++) {
   let addressRow = document.createElement("div"); // it will create a new div for every new row no. added
   addressRow.setAttribute("class", "address-row"); // this line will work as class name which will add styling i.e the border to the row nums.
