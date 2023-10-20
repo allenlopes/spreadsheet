@@ -170,3 +170,16 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+
+/* cell property is got from the script.js */
+.cell {
+    height: 2rem;
+    width: 5rem;
+    border: 1px solid #dfe4ea;
+}
+
+/* row-cont property is got from the script.js */
+.row-cont {
+    display: flex;
+}
