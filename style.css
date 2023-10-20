@@ -149,7 +149,7 @@ body {
     /* background-color: lightgreen; */
 }
 
-/* address-col is got from the script */
+/* address-col is got from the script.js */
 .address-col {
     height: 2rem;
     width: 2rem;
@@ -160,7 +160,7 @@ body {
     align-items: center;
 }
 
-/* address-row is got from the */
+/* address-row is got from the script.js */
 .address-row {
     height: 2rem;
     width: 5rem;
