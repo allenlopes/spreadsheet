@@ -128,18 +128,27 @@ body {
     height: 2rem;
     width: 2rem;
     background-color: #747d8c;
+    position: fixed; /* Set the position property as fixed, so that the box should be fixed in one place whenever we are scrooling */
+    z-index: 4; /* z-index property is basically only applied where we have position property used, it is to basically non overlap between 2 blocks */
 }
 
 .address-col-cont {
-    height: 10rem;
-    width: 2rem;
+/* in address-col-container adding position as sticky, and othrt styling too so that whenever user scrools to left or right, the user will be able
+to get to see all the row nos. from 1 to 100 whereever the user is scrooling */
+    position: sticky;
+    top: 2rem;
+    left: 0;
     /* background-color: lightblue; */
 }
 
 .address-row-cont {
-    height: 2rem;
-    /* background-color: lightpink; */
+/* in address-row-container adding position as sticky, and other styling too so that whenever user scrools to down or up, the user will be able
+to get to see all the column alphabets from A to Z whereever the user is scrooling */
+    position: sticky;
+    top: 0;
+    left: 2rem;
     display: flex;
+    /* background-color: lightpink; */
 }
 
 .cells-cont {
