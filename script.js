@@ -44,3 +44,6 @@ for(let i = 0; i < rows; i++){  //this is outer for loop for row, which will cre
   }
   cellsCont.appendChild(rowCont); // it will append the cells created iteration by iteration inside our cells-cont which we have created in index.html
 }
+
+
+
