@@ -186,6 +186,7 @@ to get to see all the column alphabets from A to Z whereever the user is scrooli
     height: 2rem;
     width: 5rem;
     border: 1px solid #dfe4ea;
+    outline: none; /* We keep outline as null so that whenever we click on the cells we don't get to see any border, since border is already visible*/
 }
 
 /* row-cont property is got from the script.js */
