@@ -40,6 +40,7 @@ for(let i = 0; i < rows; i++){  //this is outer for loop for row, which will cre
   for (let j = 0; j < cols; j++) { // this is inner for loop for columns, which will create new rows from 1 to 26.
     let cell = document.createElement("div"); // it will add 26 cells inside the rows.
     cell.setAttribute("class", "cell"); // it is for styling the columns i.e the border to the column cells in the style.css
+    cell.setAttribute("contenteditable", "true"); // it is so that we can type the data inside the cells.
     rowCont.appendChild(cell); // it will append the 26 cells inside the created row Container
   }
   cellsCont.appendChild(rowCont); // it will append the cells created iteration by iteration inside our cells-cont which we have created in index.html
