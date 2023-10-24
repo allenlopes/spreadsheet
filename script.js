@@ -13,6 +13,9 @@ let addressRowCont = document.querySelector(".address-row-cont");
 // for the grid's inside cells ->
 let cellsCont = document.querySelector(".cells-cont");
 
+// for displaying into the address bar which cell is selected currently, like C1, F12, B36, etc..
+let addressBar = document.querySelector(".address-bar");
+
 
 for (let i = 0; i < rows; i++) { // here we have set i = 0, 0 < 100,
     let addressCol = document.createElement("div"); // it will create a new div for every new row no. added
@@ -20,6 +23,7 @@ for (let i = 0; i < rows; i++) { // here we have set i = 0, 0 < 100,
     addressCol.innerText = i+1; // since i= 0, it will start from i+1 i.e 0+1 which is 1
     addressColCont.appendChild(addressCol);
 }
+
 
 // This for loop is for the grid's first row which has various columns from A to Z.
 for(let i = 0; i < cols; i++) {
@@ -42,9 +46,19 @@ for(let i = 0; i < rows; i++){  //this is outer for loop for row, which will cre
     cell.setAttribute("class", "cell"); // it is for styling the columns i.e the border to the column cells in the style.css
     cell.setAttribute("contenteditable", "true"); // it is so that we can type the data inside the cells.
     rowCont.appendChild(cell); // it will append the 26 cells inside the created row Container
+    addListenerForAddressBarDisplay(cell, i, j); // this is function which we are going to call later on, it contains cell which is fetching, it's rowth position, and it's column position
   }
   cellsCont.appendChild(rowCont); // it will append the cells created iteration by iteration inside our cells-cont which we have created in index.html
 }
+
+
+function addListenerForAddressBarDisplay(cell, i, j) { // we have called this function.
+  cell.addEventListener("click", (e) => { // basically when we click on cell it will call the addEventListener method.
+    let rowID = i+1; // it will select the row no.
+    let colID = String.fromCharCode(65 + j); // it will basically select the column name in ascii value
+    addressBar.value = `${colID}${rowID}`; // it will display the colID and rowID inside the addressBar
+  })
+};
 
 
 
