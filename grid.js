@@ -1,3 +1,5 @@
+/* ################ This grid.js file is just for the grid's javascript ################# */
+
 let rows = 100;
 let cols = 26; // there are total 26 alphabets
 
