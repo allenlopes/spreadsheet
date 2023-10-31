@@ -47,6 +47,10 @@ for(let i = 0; i < rows; i++){  //this is outer for loop for row, which will cre
     let cell = document.createElement("div"); // it will add 26 cells inside the rows.
     cell.setAttribute("class", "cell"); // it is for styling the columns i.e the border to the column cells in the style.css
     cell.setAttribute("contenteditable", "true"); // it is so that we can type the data inside the cells.
+
+    cell.setAttribute("rid", i); // attributes for cell and storage identification for each and every cell
+    cell.setAttribute("cid", j); // attributes for cell and storage identification for each and every cell
+
     rowCont.appendChild(cell); // it will append the 26 cells inside the created row Container
     addListenerForAddressBarDisplay(cell, i, j); // this is function which we are going to call later on, it contains cell which is fetching, it's rowth position, and it's column position
   }
