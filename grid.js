@@ -48,6 +48,7 @@ for(let i = 0; i < rows; i++){  //this is outer for loop for row, which will cre
     cell.setAttribute("class", "cell"); // it is for styling the columns i.e the border to the column cells in the style.css
     cell.setAttribute("contenteditable", "true"); // it is so that we can type the data inside the cells.
 
+    cell.setAttribute("spellcheck", "false"); // it is for not checking spelling mistakes in whatever sentences user writes in the cells.
     cell.setAttribute("rid", i); // attributes for cell and storage identification for each and every cell
     cell.setAttribute("cid", j); // attributes for cell and storage identification for each and every cell
 
