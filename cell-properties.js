@@ -35,3 +35,7 @@ let fontSize = document.querySelector(".font-size-prop");
 let fontFamily = document.querySelector(".font-family-prop");
 let fontColor = document.querySelector(".font-color-prop");
 let BGcolor = document.querySelector(".BGcolor-prop");
+
+
+// Attach property listeners
+bold.addEventListener("click", (e) => {})
