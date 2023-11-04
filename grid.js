@@ -68,4 +68,7 @@ function addListenerForAddressBarDisplay(cell, i, j) { // we have called this fu
 };
 
 
+// By default click on first cell via DOM
+let firstCell = document.querySelector(".cell");
+firstCell.click();
 
