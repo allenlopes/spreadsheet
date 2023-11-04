@@ -37,5 +37,10 @@ let fontColor = document.querySelector(".font-color-prop");
 let BGcolor = document.querySelector(".BGcolor-prop");
 
 
+
+// Application of two-way binding
 // Attach property listeners
-bold.addEventListener("click", (e) => {})
+bold.addEventListener("click", (e) => {
+
+})
+
