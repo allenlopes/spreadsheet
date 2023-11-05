@@ -36,11 +36,15 @@ let fontFamily = document.querySelector(".font-family-prop");
 let fontColor = document.querySelector(".font-color-prop");
 let BGcolor = document.querySelector(".BGcolor-prop");
 
-
+let addressBar = document.querySelector(".address-bar");
 
 // Application of two-way binding
 // Attach property listeners
 bold.addEventListener("click", (e) => {
-
+    let address = addressBar.value;
+    activecell(address)
 })
 
+function activecell(address) {
+
+}
