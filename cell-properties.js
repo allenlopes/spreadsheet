@@ -48,3 +48,5 @@ bold.addEventListener("click", (e) => {
 function activecell(address) {
 
 }
+
+function decodeRIDCIDFromAddress(address){}
