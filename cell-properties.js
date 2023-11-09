@@ -42,7 +42,7 @@ let addressBar = document.querySelector(".address-bar");
 // Attach property listeners
 bold.addEventListener("click", (e) => {
     let address = addressBar.value;
-    activecell(address)
+   let [cell, cellProp] = activecell(address);
 })
 
 function activecell(address) {
