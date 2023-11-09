@@ -49,4 +49,7 @@ function activecell(address) {
 
 }
 
-function decodeRIDCIDFromAddress(address){}
+function decodeRIDCIDFromAddress(address){
+    // address -> "A1", here A means column ID and 1 means row ID which is in string format
+    let rid = Number(address.slice(1)); // "1"
+}
