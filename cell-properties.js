@@ -38,6 +38,9 @@ let BGcolor = document.querySelector(".BGcolor-prop");
 
 let addressBar = document.querySelector(".address-bar");
 
+// activeColoProp and inactiveColorProp for the bold button
+let activeColorProp = "#d1d8e0";
+let inactiveColorProp = "#ecf0f1";
 
 // Application of two-way binding
 // Attach property listeners
