@@ -37,10 +37,11 @@ let fontColor = document.querySelector(".font-color-prop");
 let BGcolor = document.querySelector(".BGcolor-prop");
 
 
-// activeColoProp and inactiveColorProp for the bold button
+// activeColoProp and inactiveColorProp for the all the buttons
 let activeColorProp = "#d1d8e0";
 let inactiveColorProp = "#ecf0f1";
 
+// FOR BOLD TEXT STYLING AND BOLD BUTTON STYLING ->
 // Application of two-way binding
 // Attach property listeners
 bold.addEventListener("click", (e) => {
@@ -52,6 +53,23 @@ bold.addEventListener("click", (e) => {
     cell.style.fontWeight = cellProp.bold ? "bold" : "normal"; // Basically when we click on Bold button, it should make the font inside the cell as Bold.
     bold.style.backgroundColor = cellProp.bold ? activeColorProp : inactiveColorProp; // Basically when we click on Bold button, we also want that the bold button should glow up too, signifying it as bold, so we add activeColorProp property.
 })
+
+
+// FOR ITALIC TEXT STYLING AND ITALIC BUTTON STYLING ->
+// Application of two-way binding
+// Attach property listeners
+italic.addEventListener("click", (e) => {
+    let address = addressBar.value;
+    let [cell, cellProp] = activecell(address);
+
+    // Modification
+    cellProp.italic = !cellProp.italic; //Data change
+    cell.style.fontStyle = cellProp.italic ? "italic" : "normal"; // Basically when we click on italic button, it should make the font inside the cell as italic.
+    italic.style.backgroundColor = cellProp.italic ? activeColorProp : inactiveColorProp; // Basically when we click on italic button, we also want that the italic button should glow up too, signifying it as italic, so we add activeColorProp property.
+})
+
+
+
 
 function activecell(address) {
     let [rid, cid] = decodeRIDCIDFromAddress(address);
