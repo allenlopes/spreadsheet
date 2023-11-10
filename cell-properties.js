@@ -69,6 +69,20 @@ italic.addEventListener("click", (e) => {
 })
 
 
+// FOR UNDERLINE TEXT STYLING AND UNDERLINE BUTTON STYLING ->
+// Application of two-way binding
+// Attach property listeners
+underline.addEventListener("click", (e) => {
+    let address = addressBar.value;
+    let [cell, cellProp] = activecell(address);
+
+    // Modification
+    cellProp.underline = !cellProp.underline; //Data change
+    cell.style.textDecoration = cellProp.underline ? "underline" : "none"; // Basically when we click on underline button, it should underline the font inside the cell.
+    underline.style.backgroundColor = cellProp.underline ? activeColorProp : inactiveColorProp; // Basically when we click on underline button, we also want that the underline button should glow up too, signifying it as underline, so we add activeColorProp property.
+})
+
+
 
 
 function activecell(address) {
