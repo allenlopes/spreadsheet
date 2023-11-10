@@ -42,7 +42,12 @@ let addressBar = document.querySelector(".address-bar");
 // Attach property listeners
 bold.addEventListener("click", (e) => {
     let address = addressBar.value;
-   let [cell, cellProp] = activecell(address);
+    let [cell, cellProp] = activecell(address);
+
+    // Modification
+    cellProp.bold = !cellProp.bold; //Data change
+    cell.style.fontWeight = cellProp.bold ? "bold" : "normal"; // Basically when we click on Bold button, it should make the font Style as Bold.
+
 })
 
 function activecell(address) {
