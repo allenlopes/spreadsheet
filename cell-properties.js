@@ -36,7 +36,6 @@ let fontFamily = document.querySelector(".font-family-prop");
 let fontColor = document.querySelector(".font-color-prop");
 let BGcolor = document.querySelector(".BGcolor-prop");
 
-let addressBar = document.querySelector(".address-bar");
 
 // activeColoProp and inactiveColorProp for the bold button
 let activeColorProp = "#d1d8e0";
