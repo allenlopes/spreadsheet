@@ -38,6 +38,7 @@ let BGcolor = document.querySelector(".BGcolor-prop");
 
 let addressBar = document.querySelector(".address-bar");
 
+
 // Application of two-way binding
 // Attach property listeners
 bold.addEventListener("click", (e) => {
@@ -46,8 +47,8 @@ bold.addEventListener("click", (e) => {
 
     // Modification
     cellProp.bold = !cellProp.bold; //Data change
-    cell.style.fontWeight = cellProp.bold ? "bold" : "normal"; // Basically when we click on Bold button, it should make the font Style as Bold.
-
+    cell.style.fontWeight = cellProp.bold ? "bold" : "normal"; // Basically when we click on Bold button, it should make the font inside the cell as Bold.
+    bold.style.backgroundColor = cellProp.bold ? activeColorProp : inactiveColorProp; // Basically when we click on Bold button, we also want that the bold button should glow up too, signifying it as bold, so we add activeColorProp property.
 })
 
 function activecell(address) {
