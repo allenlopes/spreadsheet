@@ -64,6 +64,6 @@ function activecell(address) {
 function decodeRIDCIDFromAddress(address){
     // address -> "A1", here A means column ID and 1 means row ID which is in string format
     let rid = Number(address.slice(1)-1); // "1" -> 0th row
-    let cid = Number(String.charCodeAt(0)) - 65; // "A" -> 65
+    let cid = Number(address.charCodeAt(0)) - 65; // "A" -> 65
     return [rid, cid];
 }
