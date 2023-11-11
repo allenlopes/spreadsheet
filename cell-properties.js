@@ -34,6 +34,7 @@ let rightAlign = alignment[2];
 let fontSize = document.querySelector(".font-size-prop");
 let fontFamily = document.querySelector(".font-family-prop");
 let fontColor = document.querySelector(".font-color-prop");
+let fct = document.querySelector(".fct"); // This selector added by me
 let BGcolor = document.querySelector(".BGcolor-prop");
 
 
@@ -104,6 +105,19 @@ fontFamily.addEventListener("change", (e) => {
   cellProp.fontFamily = fontFamily.value; // Data change
   cell.style.fontFamily = cellProp.fontFamily; // (UI Change) Basically when we want to change the font family, it will change the font's famoly inside the cell.
   fontFamily.value = cellProp.fontFamily; // Basically when we want to change font family we click on font family dropdown, we also want that the font family we are changing should show up in the dropdown too, signifying it as correct font family changed, so we add cellProp.fontFamily property.
+})
+
+
+// FOR CHANGING OF FONT COLOR WHENEVER CLICKED ON FONT COLOR ICON ->
+fontColor.addEventListener("change", (e) => {
+  let address = addressBar.value;
+  let [cell, cellProp] = activecell(address);
+
+  // Modification
+  cellProp.fontColor = fontColor.value; // Data change
+  cell.style.color = cellProp.fontColor; // (UI Change) Basically when we want to change the font color, it will change the font's color inside the cell.
+  fontColor.value = cellProp.fontColor; // Basically when we want to change font color we click on font color icon, we also want that the font color we are changing should show up in the icon too, signifying it as correct font color changed, so we add cellProp.fontColor property.
+  fct.style.color = cellProp.fontColor; // This property for icon styling is added by me.
 })
 
 
