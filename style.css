@@ -37,6 +37,10 @@ body {
     margin-right: 1rem;
 }
 
+.cellprop-actions-cont > *:hover { /* Here we are setting the cursor as pointer whenever mouse is hovering over the cell property's icons, like the bold icon, italic icon, font style, font size etc.. */
+    cursor: pointer;
+}
+
 .cellprop-actions-cont > select {
     border: none;
     border-radius: 3px;
