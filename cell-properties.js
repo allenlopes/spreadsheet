@@ -77,9 +77,21 @@ underline.addEventListener("click", (e) => {
     let [cell, cellProp] = activecell(address);
 
     // Modification
-    cellProp.underline = !cellProp.underline; //Data change
+    cellProp.underline = !cellProp.underline; // Data change
     cell.style.textDecoration = cellProp.underline ? "underline" : "none"; // Basically when we click on underline button, it should underline the font inside the cell.
     underline.style.backgroundColor = cellProp.underline ? activeColorProp : inactiveColorProp; // Basically when we click on underline button, we also want that the underline button should glow up too, signifying it as underline, so we add activeColorProp property.
+})
+
+
+// FOR CHANGING OF FONT SIZE WHENEVER CLICKED ON FONT SIZE DROP DOWN ->
+fontSize.addEventListener("change", (e) => {
+  let address = addressBar.value;
+  let [cell, cellProp] = activecell(address);
+
+  // Modification
+  cellProp.fontSize = fontSize.value; // Data change
+  cell.style.fontSize = cellProp.fontSize + "px"; // (UI Change) Basically when we want to change the font size, it will change the font's size inside the cell.
+  fontSize.value = cellProp.fontSize; // Basically when we want to change font size we click on font size dropdown, we also want that the font size we are changing should show up in the dropdown too, signifying it as correct font size changed, so we add cellProp.fontSize property.
 })
 
 
