@@ -34,8 +34,9 @@ let rightAlign = alignment[2];
 let fontSize = document.querySelector(".font-size-prop");
 let fontFamily = document.querySelector(".font-family-prop");
 let fontColor = document.querySelector(".font-color-prop");
-let fct = document.querySelector(".fct"); // This selector added by me
+let fct = document.querySelector(".fct"); // This selector is added by me
 let BGcolor = document.querySelector(".BGcolor-prop");
+let bgf = document.querySelector(".bgf"); // This selector is added by me
 
 
 // activeColoProp and inactiveColorProp for the all the buttons
@@ -120,6 +121,18 @@ fontColor.addEventListener("change", (e) => {
   fct.style.color = cellProp.fontColor; // This property for icon styling is added by me.
 })
 
+
+// FOR CHANGING OF FONT's BACKGROUND COLOR WHENEVER CLICKED ON BG COLOR ICON ->
+BGcolor.addEventListener("change", (e) => {
+  let address = addressBar.value;
+  let [cell, cellProp] = activecell(address);
+
+  // Modification
+  cellProp.BGcolor = BGcolor.value; // Data change
+  cell.style.backgroundColor = cellProp.BGcolor; // (UI Change) Basically when we want to change the font's background color, it will change the font's background color inside the cell.
+  BGcolor.value = cellProp.BGcolor; // Basically when we want to change font's background color we click on BG color icon, we also want that the font's background color we are changing should show up in the icon too, signifying it as correct font's BG color changed, so we add cellProp.BGColor property.
+  bgf.style.color = cellProp.BGcolor; // This property for icon styling is added by me.
+});
 
 
 
