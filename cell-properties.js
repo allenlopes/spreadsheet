@@ -145,9 +145,8 @@ alignment.forEach((alignElem) => {
       cellProp.alignment = alignValue; // Data Change
       cell.style.textAlign = cellProp.alignment; // (UI Change- 1) Basically when we want to align the text inside the cell, it will change the text inside the cell.
 
-      switch (
-        alignValue // (UI Change- 2) Basically when we click on any alignment button(right, left, center), we also want that the alignment button which we've clicked should glow up too, signifying it as alignment(left, right or center), so we add activeColorProp property for each alignment buttons.
-      ) {
+      switch (alignValue) // (UI Change- 2) Basically when we click on any alignment button(right, left, center), we also want that the alignment button which we've clicked should glow up too, signifying it as alignment(left, right or center), so we add activeColorProp property for each alignment buttons.
+        {
         case "left": // here the case is left, so whenever we click on left align button it will glow up using activeColorProp property and rest other buttons will not glow up according to inactiveColorProp
           leftAlign.style.backgroundColor = activeColorProp;
           centerAlign.style.backgroundColor = inactiveColorProp;
@@ -165,9 +164,54 @@ alignment.forEach((alignElem) => {
           leftAlign.style.backgroundColor = inactiveColorProp;
           centerAlign.style.backgroundColor = inactiveColorProp;
           break;
-      }
+        }
     })
 })
+
+
+let allCells = document.querySelectorAll(".cell");
+for(let i = 0; i < allCells.length; i++) {
+    addListenerToAttachCellProperties(allCells[i]);
+}
+
+function addListenerToAttachCellProperties(cell) {
+    // Work
+    cell.addEventListener(".click", (e) => {
+        let address = addressBar.value;
+        let [rid, cid] = decodeRIDCIDFromAddress(address);
+        let cellProp = sheetDB[rid, cid];
+
+
+        // Apply cell Properties
+        cell.style.fontWeight = cellProp.bold ? "bold" : "normal";
+        cell.style.fontStyle = cellProp.italic ? "italic" : "normal";
+        cell.style.textDecoration = cellProp.underline ? "underline" : "none";
+        cell.style.fontSize = cellProp.fontSize + "px";
+        cell.style.fontFamily = cellProp.fontFamily;
+        cell.style.color = cellProp.fontColor;
+        cell.style.backgroundColor = cellProp.BGcolor;
+        switch (cellProp.alignment) // (UI Change- 2) Basically when we click on any alignment button(right, left, center), we also want that the alignment button which we've clicked should glow up too, signifying it as alignment(left, right or center), so we add activeColorProp property for each alignment buttons.
+        {
+            case "left": // here the case is left, so whenever we click on left align button it will glow up using activeColorProp property and rest other buttons will not glow up according to inactiveColorProp
+            leftAlign.style.backgroundColor = activeColorProp;
+            centerAlign.style.backgroundColor = inactiveColorProp;
+            rightAlign.style.backgroundColor = inactiveColorProp;
+            break;
+
+            case "center": // here the case is center, so whenever we click on center align button it will glow up using activeColorProp property and rest other buttons will not glow up according to inactiveColorProp
+            centerAlign.style.backgroundColor = activeColorProp;
+            leftAlign.style.backgroundColor = inactiveColorProp;
+            rightAlign.style.backgroundColor = inactiveColorProp;
+            break;
+
+            case "right": // here the case is right, so whenever we click on right align button it will glow up using activeColorProp property and rest other buttons will not glow up according to inactiveColorProp
+            rightAlign.style.backgroundColor = activeColorProp;
+            leftAlign.style.backgroundColor = inactiveColorProp;
+            centerAlign.style.backgroundColor = inactiveColorProp;
+            break;
+        }
+    })
+}
 
 
 
