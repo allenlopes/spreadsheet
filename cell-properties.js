@@ -169,6 +169,7 @@ alignment.forEach((alignElem) => {
 })
 
 
+//
 let allCells = document.querySelectorAll(".cell");
 for(let i = 0; i < allCells.length; i++) {
     addListenerToAttachCellProperties(allCells[i]);
@@ -176,10 +177,10 @@ for(let i = 0; i < allCells.length; i++) {
 
 function addListenerToAttachCellProperties(cell) {
     // Work
-    cell.addEventListener(".click", (e) => {
+    cell.addEventListener("click", (e) => {
         let address = addressBar.value;
         let [rid, cid] = decodeRIDCIDFromAddress(address);
-        let cellProp = sheetDB[rid, cid];
+        let cellProp = sheetDB[rid][cid];
 
 
         // Apply cell Properties
@@ -189,7 +190,19 @@ function addListenerToAttachCellProperties(cell) {
         cell.style.fontSize = cellProp.fontSize + "px";
         cell.style.fontFamily = cellProp.fontFamily;
         cell.style.color = cellProp.fontColor;
-        cell.style.backgroundColor = cellProp.BGcolor;
+        fct.style.color = cellProp.fontColor;
+        cell.style.backgroundColor = cellProp.BGcolor === "#000000" ? "transparent" : cellProp.BGcolor;
+        bgf.style.color = cellProp.BGcolor;
+        cell.style.textAlign = cellProp.alignment;
+
+        // Apply Properties UI Props Container
+        bold.style.backgroundColor = cellProp.bold ? activeColorProp : inactiveColorProp; // Basically when we click on Bold button, we also want that the bold button should glow up too, signifying it as bold, so we add activeColorProp property.
+        italic.style.backgroundColor = cellProp.italic ? activeColorProp : inactiveColorProp; // Basically when we click on italic button, we also want that the italic button should glow up too, signifying it as italic, so we add activeColorProp property.
+        underline.style.backgroundColor = cellProp.underline ? activeColorProp : inactiveColorProp; // Basically when we click on underline button, we also want that the underline button should glow up too, signifying it as underline, so we add activeColorProp property.
+        fontSize.value = cellProp.fontSize; // Basically when we want to change font size we click on font size dropdown, we also want that the font size we are changing should show up in the dropdown too, signifying it as correct font size changed, so we add cellProp.fontSize property.
+        fontFamily.value = cellProp.fontFamily; // Basically when we want to change font family we click on font family dropdown, we also want that the font family we are changing should show up in the dropdown too, signifying it as correct font family changed, so we add cellProp.fontFamily property.
+        fontColor.value = cellProp.fontColor; // Basically when we want to change font color we click on font color icon, we also want that the font color we are changing should show up in the icon too, signifying it as correct font color changed, so we add cellProp.fontColor property.
+        BGcolor.value = cellProp.BGcolor; // Basically when we want to change font's background color we click on BG color icon, we also want that the font's background color we are changing should show up in the icon too, signifying it as correct font's BG color changed, so we add cellProp.BGColor property.
         switch (cellProp.alignment) // (UI Change- 2) Basically when we click on any alignment button(right, left, center), we also want that the alignment button which we've clicked should glow up too, signifying it as alignment(left, right or center), so we add activeColorProp property for each alignment buttons.
         {
             case "left": // here the case is left, so whenever we click on left align button it will glow up using activeColorProp property and rest other buttons will not glow up according to inactiveColorProp
