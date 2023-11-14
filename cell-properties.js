@@ -169,7 +169,7 @@ alignment.forEach((alignElem) => {
 })
 
 
-//
+// FOR EACH CELL NEW STYLING
 let allCells = document.querySelectorAll(".cell");
 for(let i = 0; i < allCells.length; i++) {
     addListenerToAttachCellProperties(allCells[i]);
