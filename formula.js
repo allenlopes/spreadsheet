@@ -14,3 +14,13 @@ for (let i = 0; i < rows; i++) {
 
 
 let formulaBar = document.querySelector(".formula-bar"); // formula-bar access from index.html
+
+formulaBar.addEventListener("keydown", (e) => {
+    if(e.key === "Enter" && formulaBar.value) {
+
+    }
+})
+
+function evaluateFormula(formula) {
+    return eval(formula);
+}
