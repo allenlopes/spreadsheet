@@ -17,6 +17,7 @@ for (let i = 0; i < rows; i++) {
             fontColor: "#000000",
             BGcolor: "#000000", // Just for indication purpose
             value: "", // Cell ki jo bhi value hogi isme store hogi
+            formula: "",
         }
         sheetRow.push(cellProp);
     }
