@@ -18,10 +18,12 @@ let formulaBar = document.querySelector(".formula-bar"); // formula-bar access f
 formulaBar.addEventListener("keydown", (e) => {
         let inputFormula = formula.value;
     if(e.key === "Enter" && inputFormula) {
-        let evaluatedValue = evaluateFormula();
+        let evaluatedValue = evaluateFormula(inputFormula);
     }
 })
 
 function evaluateFormula(formula) {
     return eval(formula);
 }
+
+function setCellUIAndCellProp(evaluatedValue,) {}
