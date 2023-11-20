@@ -26,4 +26,7 @@ function evaluateFormula(formula) {
     return eval(formula);
 }
 
-function setCellUIAndCellProp(evaluatedValue,) {}
+function setCellUIAndCellProp(evaluatedValue, formula) {
+    let address = addressBar.value;
+    let [cell, cellProp] = getCellAndCellProp(address);
+}
