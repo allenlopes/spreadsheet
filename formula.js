@@ -19,6 +19,9 @@ formulaBar.addEventListener("keydown", (e) => {
         let inputFormula = formula.value;
     if(e.key === "Enter" && inputFormula) {
         let evaluatedValue = evaluateFormula(inputFormula);
+
+        // To Update UI and cellProp in DB
+        setCellUIAndCellProp(evaluatedValue, inputFormula);
     }
 })
 
@@ -29,4 +32,10 @@ function evaluateFormula(formula) {
 function setCellUIAndCellProp(evaluatedValue, formula) {
     let address = addressBar.value;
     let [cell, cellProp] = getCellAndCellProp(address);
+
+    // UI Update
+    cell.innerText= evaluatedValue;
+    // DB Update
+    cellProp.value = evaluatedValue;
+    cellProp.formula = formula;
 }
