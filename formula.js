@@ -27,7 +27,12 @@ formulaBar.addEventListener("keydown", (e) => {
 
 function evaluateFormula(formula) {
     let encodedFormula = formula.split(" "); // formula must be space seperated
-    for( let i = 0; i < encodedFormula.length; i++){}
+    for( let i = 0; i < encodedFormula.length; i++){
+        let asciiValue = encodedFormula[i].charCodeAt(0);
+        if(asciiValue >= 65 && asciiValue <= 90){ // since ascii value start from 65 i.e at 65th position the character is A, and at 90th position the character is Z.
+
+        }
+    }
     return eval(formula);
 }
 
