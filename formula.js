@@ -34,7 +34,8 @@ function evaluateFormula(formula) {
             encodedFormula[i] = cellProp.value;
         }
     }
-    return eval(formula);
+    let decodedFormula = encodedFormula.join(" ");
+    return eval(decodedFormula);
 }
 
 function setCellUIAndCellProp(evaluatedValue, formula) {
