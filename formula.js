@@ -25,6 +25,11 @@ formulaBar.addEventListener("keydown", (e) => {
     }
 })
 
+
+function addChildToParent() {
+
+}
+
 function evaluateFormula(formula) {
     let encodedFormula = formula.split(" "); // formula must be space seperated
     for( let i = 0; i < encodedFormula.length; i++){
