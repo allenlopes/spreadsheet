@@ -27,8 +27,16 @@ formulaBar.addEventListener("keydown", (e) => {
 })
 
 
-function addChildToParent() {
-
+function addChildToParent(formula) {
+    let childAddress = addressBar.value;
+    let encodedFormula = formula.split(" "); // formula must be space seperated
+    for (let i = 0; i < encodedFormula.length; i++){
+        let asciiValue = encodedFormula[i].charCodeAt(0);
+        if (asciiValue >= 65 && asciiValue <= 90){
+            let [parentCell, parentCellProp] = getCellAndCellProp(encodedFormula[i]);
+            parentCellProp.children.push(childAddress);
+        }
+    }
 }
 
 function evaluateFormula(formula) {
