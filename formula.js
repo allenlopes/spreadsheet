@@ -23,6 +23,7 @@ formulaBar.addEventListener("keydown", (e) => {
         // To Update UI and cellProp in DB
         setCellUIAndCellProp(evaluatedValue, inputFormula);
         addChildToParent(inputFormula); // Parent cell ki relationship
+        console.log(sheetDB);
     }
 })
 
