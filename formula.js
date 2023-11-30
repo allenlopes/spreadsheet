@@ -20,6 +20,11 @@ formulaBar.addEventListener("keydown", (e) => {
     if(e.key === "Enter" && inputFormula) {
         let evaluatedValue = evaluateFormula(inputFormula);
 
+        // If change in formula, break old Parent Child Relation, evaluate new formula, add new Parent Child Relation.
+        let address = addressBar.value;
+        let [cell, cellProp] = getCellAndCellProp(address);
+        if (inputFormula !== cellProp.formula) removeChildFromParent(cellProp.formula);
+
         // To Update UI and cellProp in DB
         setCellUIAndCellProp(evaluatedValue, inputFormula);
         addChildToParent(inputFormula); // Parent cell ki relationship
