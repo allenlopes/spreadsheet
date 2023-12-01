@@ -16,14 +16,16 @@ for (let i = 0; i < rows; i++) {
 let formulaBar = document.querySelector(".formula-bar"); // formula-bar access from index.html
 
 formulaBar.addEventListener("keydown", (e) => {
-        let inputFormula = formulaBar.value;
-    if(e.key === "Enter" && inputFormula)
+    let inputFormula = formulaBar.value;
+    if(e.key === "Enter" && inputFormula) {
 
 
         // If change in formula, break old Parent Child Relation, evaluate new formula, add new Parent Child Relation.
         let address = addressBar.value;
         let [cell, cellProp] = getCellAndCellProp(address);
         if (inputFormula !== cellProp.formula) removeChildFromParent(cellProp.formula);
+
+        let evaluatedValue = evaluateFormula(inputFormula);
 
         // To Update UI and cellProp in DB
         setCellUIAndCellProp(evaluatedValue, inputFormula);
@@ -53,7 +55,7 @@ function removeChildFromParent(formula) {
         if (asciiValue >= 65 && asciiValue <= 90){
             let [parentCell, parentCellProp] = getCellAndCellProp(encodedFormula[i]);
             let idx = parentCellProp.children.indexOf(childAddress);
-            parentCellProp.childAddress.splice(idx, 1);
+            parentCellProp.childAddress.splice(idx,);
         }
     }
 }
