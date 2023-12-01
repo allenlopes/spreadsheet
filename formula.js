@@ -17,8 +17,8 @@ let formulaBar = document.querySelector(".formula-bar"); // formula-bar access f
 
 formulaBar.addEventListener("keydown", (e) => {
         let inputFormula = formulaBar.value;
-    if(e.key === "Enter" && inputFormula) {
-        let evaluatedValue = evaluateFormula(inputFormula);
+    if(e.key === "Enter" && inputFormula)
+
 
         // If change in formula, break old Parent Child Relation, evaluate new formula, add new Parent Child Relation.
         let address = addressBar.value;
@@ -28,7 +28,7 @@ formulaBar.addEventListener("keydown", (e) => {
         // To Update UI and cellProp in DB
         setCellUIAndCellProp(evaluatedValue, inputFormula);
         addChildToParent(inputFormula); // Parent cell ki relationship
-        console.log(sheetDB);
+        // console.log(sheetDB);
     }
 })
 
@@ -46,7 +46,16 @@ function addChildToParent(formula) {
 }
 
 function removeChildFromParent(formula) {
-
+    let childAddress = addressBar.value;
+    let encodedFormula = formula.split(" "); // formula must be space seperated
+    for (let i = 0; i < encodedFormula.length; i++){
+        let asciiValue = encodedFormula[i].charCodeAt(0);
+        if (asciiValue >= 65 && asciiValue <= 90){
+            let [parentCell, parentCellProp] = getCellAndCellProp(encodedFormula[i]);
+            let idx = parentCellProp.children.indexOf(childAddress);
+            parentCellProp.childAddress.splice(idx, 1);
+        }
+    }
 }
 
 function evaluateFormula(formula) {
