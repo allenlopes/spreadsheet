@@ -31,6 +31,8 @@ formulaBar.addEventListener("keydown", (e) => {
         setCellUIAndCellProp(evaluatedValue, inputFormula, address);
         addChildToParent(inputFormula); // Parent cell ki relationship
         console.log(sheetDB);
+
+        updateChildrenCells(address); // calling the updateChildrenCells with address parameter.
     }
 })
 
