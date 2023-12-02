@@ -34,6 +34,7 @@ formulaBar.addEventListener("keydown", (e) => {
     }
 })
 
+
 function updateChildrenCells(parentAddress) {
     let [parentCell, parentCellProp] = getCellAndCellProp(parentAddress);
     let children = parentCellProp.children;
@@ -47,6 +48,7 @@ function updateChildrenCells(parentAddress) {
     }
 }
 
+
 function addChildToParent(formula) {
     let childAddress = addressBar.value;
     let encodedFormula = formula.split(" "); // formula must be space seperated
@@ -58,6 +60,7 @@ function addChildToParent(formula) {
         }
     }
 }
+
 
 function removeChildFromParent(formula) {
     let childAddress = addressBar.value;
@@ -72,6 +75,7 @@ function removeChildFromParent(formula) {
     }
 }
 
+
 function evaluateFormula(formula) {
     let encodedFormula = formula.split(" "); // formula must be space seperated
     for( let i = 0; i < encodedFormula.length; i++){
@@ -85,8 +89,8 @@ function evaluateFormula(formula) {
     return eval(decodedFormula);
 }
 
-function setCellUIAndCellProp(evaluatedValue, formula) {
-    let address = addressBar.value;
+
+function setCellUIAndCellProp(evaluatedValue, formula, address) {
     let [cell, cellProp] = getCellAndCellProp(address);
 
     // UI Update
