@@ -168,6 +168,11 @@ alignment.forEach((alignElem) => {
           centerAlign.style.backgroundColor = inactiveColorProp;
           break;
         }
+
+      // Whenever we write a formula, and whenever we click on different cell apart from the cell we are working in, the working cell should be updated based on the formula we have wrote.
+        let formulaBar = document.querySelector(".formula-bar"); // first we select the formula-bar
+        formulaBar.value = cellProp.formula;
+        cell.value = cellProp.value;
     })
 })
 
