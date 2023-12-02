@@ -72,7 +72,7 @@ function removeChildFromParent(formula) {
         if (asciiValue >= 65 && asciiValue <= 90){
             let [parentCell, parentCellProp] = getCellAndCellProp(encodedFormula[i]);
             let idx = parentCellProp.children.indexOf(childAddress);
-            parentCellProp.childAddress.splice(idx, 1);
+            parentCellProp.children.splice(idx, 1);
         }
     }
 }
