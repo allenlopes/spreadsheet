@@ -30,10 +30,22 @@ formulaBar.addEventListener("keydown", (e) => {
         // To Update UI and cellProp in DB
         setCellUIAndCellProp(evaluatedValue, inputFormula);
         addChildToParent(inputFormula); // Parent cell ki relationship
-        // console.log(sheetDB);
+        console.log(sheetDB);
     }
 })
 
+function updateChildrenCells(parentAddress) {
+    let [parentCell, parentCellProp] = getCellAndCellProp(parentAddress);
+    let children = parentCellProp.children;
+
+    for(let i = 0; i < children.length; i++) {
+        let childAddress = children[i];
+        let [childCell, childCellProp]= getCellAndCellProp(childAddress);
+        let childFormula = childCellProp.formula;
+
+        let evaluatedValue = evaluateFormula(childFormula);
+    }
+}
 
 function addChildToParent(formula) {
     let childAddress = addressBar.value;
