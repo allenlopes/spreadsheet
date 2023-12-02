@@ -6,8 +6,16 @@ for (let i = 0; i < rows; i++) {
              let [activeCell, cellProp] = getCellAndCellProp(address); // After getting the address, we will access he object inside the cell.
              let enteredData = activeCell.innerText; // whatever the modified data is done by user, we take it in 'enteredData'.
 
+             // If data is completely same, we don't modify anything and just return the output.
+             if (enteredData === cellProp.value) return;
+
              cellProp.value = enteredData; // cell ki object mai value store hogi jo bhi ham cell mai dalenge
              // console.log(cellProp);
+
+             // If data modified, remove Parent-Child Relation, formula empty, update children with new hardcoded(modified) value.
+             removeChildFromParent(cellProp.formula);
+             cellProp.formula = "",
+             updateChildrenCells(address);
         })
     }
 }
