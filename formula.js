@@ -46,6 +46,7 @@ function updateChildrenCells(parentAddress) {
 
         let evaluatedValue = evaluateFormula(childFormula);
         setCellUIAndCellProp(evaluatedValue, childFormula, childAddress);
+        updateChildrenCells(childAddress);
     }
 }
 
