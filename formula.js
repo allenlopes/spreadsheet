@@ -45,6 +45,11 @@ formulaBar.addEventListener("keydown", (e) => {
 })
 
 
+function addChildToGraphComponent(formula, childAddress) {
+    let [crid, ccid] =  decodeRIDCIDFromAddress(childAddress);
+}
+
+
 function updateChildrenCells(parentAddress) {
     let [parentCell, parentCellProp] = getCellAndCellProp(parentAddress);
     let children = parentCellProp.children;
