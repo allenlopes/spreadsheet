@@ -53,6 +53,9 @@ function addChildToGraphComponent(formula, childAddress) {
         let asciiValue = encodedFormula[i].charCodeAt(0);
         if(asciiValue >= 65 && asciiValue <= 90) {
             let [prid, pcid] = decodeRIDCIDFromAddress(encodedFormula[i]);
+            // B1 : A1 + 10
+            // rid -> i, cid -> j
+            graphComponentMatrix[prid][pcid].push([crid, ccid]);
         }
     }
 }
