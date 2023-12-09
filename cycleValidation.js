@@ -6,7 +6,6 @@ for (let i = 0; i < rows; i++){
     for(let j = 0; j < cols; j++){
         // Why array? ->More than 1 child relation(dependency)
         row.push([]);
-
     }
     graphComponentMatrix.push(row);
 }
