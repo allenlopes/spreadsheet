@@ -41,6 +41,8 @@ formulaBar.addEventListener("keydown", (e) => {
         console.log(sheetDB);
 
         updateChildrenCells(address); // calling the updateChildrenCells with address parameter.
+
+        updateChildrenCells;
     }
 })
 
