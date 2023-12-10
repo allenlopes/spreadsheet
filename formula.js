@@ -42,7 +42,6 @@ formulaBar.addEventListener("keydown", (e) => {
 
         updateChildrenCells(address); // calling the updateChildrenCells with address parameter.
 
-        updateChildrenCells;
     }
 })
 
