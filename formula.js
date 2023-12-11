@@ -35,6 +35,8 @@ formulaBar.addEventListener("keydown", (e) => {
 
         let evaluatedValue = evaluateFormula(inputFormula);
 
+        addChildToGraphComponent(inputFormula, address);
+
         // To Update UI and cellProp in DB
         setCellUIAndCellProp(evaluatedValue, inputFormula, address);
         addChildToParent(inputFormula); // Parent cell ki relationship
