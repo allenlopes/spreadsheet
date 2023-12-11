@@ -33,9 +33,12 @@ formulaBar.addEventListener("keydown", (e) => {
         let [cell, cellProp] = getCellAndCellProp(address);
         if (inputFormula !== cellProp.formula) removeChildFromParent(cellProp.formula);
 
+        addChildToGraphComponent(inputFormula, address);
+        // Check formula is cyclic or not, then only evaluate.
+
         let evaluatedValue = evaluateFormula(inputFormula);
 
-        addChildToGraphComponent(inputFormula, address);
+
 
         // To Update UI and cellProp in DB
         setCellUIAndCellProp(evaluatedValue, inputFormula, address);
