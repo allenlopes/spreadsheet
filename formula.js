@@ -37,9 +37,12 @@ formulaBar.addEventListener("keydown", (e) => {
         // Check formula is cyclic or not, then only evaluate.
         // True -> Cycle, False -> Not Cyclic
         let isCyclic = isGraphCyclic();
+        if (isCyclic === true) {
+            alert("Your formula is cyclic");
+            return;
+        }
 
         let evaluatedValue = evaluateFormula(inputFormula);
-
 
 
         // To Update UI and cellProp in DB
