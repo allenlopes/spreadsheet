@@ -39,6 +39,7 @@ formulaBar.addEventListener("keydown", (e) => {
         let isCyclic = isGraphCyclic();
         if (isCyclic === true) {
             alert("Your formula is cyclic");
+            removeChildFromGraphComponent(inputFormula, address);
             return;
         }
 
@@ -69,6 +70,10 @@ function addChildToGraphComponent(formula, childAddress) {
             graphComponentMatrix[prid][pcid].push([crid, ccid]);
         }
     }
+}
+
+
+function removeChildFromGraphComponent() {
 }
 
 
