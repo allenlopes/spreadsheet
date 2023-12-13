@@ -17,9 +17,13 @@ function isGraphCyclic() {
     let dfsVisited = [];
 
     for(let i = 0; i < rows; i++) {
+        let visitedRow = [];
+        let dfsVisitedRow = [];
         for(let j = 0; j < cols; j++){
-            visited.push([]);
-            dfsVisited.push([]);
+            visitedRow.push(false);
+            dfsVisited.push(false);
         }
     }
+
+
 }
