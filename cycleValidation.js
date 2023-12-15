@@ -48,7 +48,10 @@ function dfsCycleDetection(graphComponentMatrix, srcr, srcc, visited, dfsVisited
         let [crid, ccid] = graphComponentMatrix[srcr][srcc][children]; // crid -> child row id, ccid -> child column id
         if (visited[crid][ccid] = false) {
             let response = dfsCycleDetection(graphComponentMatrix, crid, ccid, visited, dfsVisited);
-            if (response == true) return true;
+            if (response == true) return true; // Found cycle so return immediately, no need to explore more path.
+        }
+        else if (visited[crid][ccid] == true && dfsVisited[crid][ccid] == true) { // Found cycle so return immediately, no need to explore more path.
+            return true;
         }
     }
 
