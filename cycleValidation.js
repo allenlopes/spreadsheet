@@ -52,13 +52,14 @@ function dfsCycleDetection(graphComponentMatrix, srcr, srcc, visited, dfsVisited
     for (let children = 0; children < graphComponentMatrix[srcr][srcc].length; children++) {
         let [nbrr, nbrc] = graphComponentMatrix[srcr][srcc][children]; // nbrr -> neighbour row, nbrc -> neighbour column
 
-        if (visited[nbrr][nbrc] = false) {
+        if (visited[nbrr][nbrc] === false) {
             let response = dfsCycleDetection(graphComponentMatrix, nbrr, nbrc, visited, dfsVisited);
-            if (response == true) return true; // Found cycle so return immediately, no need to explore more path.
+            if (response === true) return true; // Found cycle so return immediately, no need to explore more path.
         }
 
-        else if (dfsVisited[nbrr][nbrc] == true) { // Found cycle so return immediately, no need to explore more path.
-            return true;
+        else if (visited[nbrr][nbrc] === true && dfsVisited[nbrr][nbrc] === true) {
+          // Found cycle so return immediately, no need to explore more path.
+          return true;
         }
     }
 
