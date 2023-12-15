@@ -1,7 +1,7 @@
 // Storage -> 2D array (Basic needed)
 let graphComponentMatrix = [];
 
-for (let i = 0; i < rows; i++){
+for (let i = 0; i < rows; i++) {
     let row = [];
     for(let j = 0; j < cols; j++){
         // Why array? ->More than 1 child relation(dependency)
@@ -19,9 +19,9 @@ function isGraphCyclic(graphComponentMatrix) {
     for(let i = 0; i < rows; i++) {
         let visitedRow = [];
         let dfsVisitedRow = [];
-        for(let j = 0; j < cols; j++){
+        for(let j = 0; j < cols; j++) {
             visitedRow.push(false);
-            dfsVisited.push(false);
+            dfsVisitedRow.push(false);
         }
         visited.push(visitedRow);
         dfsVisited.push(dfsVisitedRow);
@@ -45,19 +45,19 @@ function isGraphCyclic(graphComponentMatrix) {
 // Cycle Detection condition -> if (visited[i][j] == true && dfsVisited[i][j] == true) -> cycle
 // Return -> True/False
 // True -> Cyclic, False -> Not Cyclic
-function dfsCycleDetection(graphComponentMatrix, srcr, srcc, visited, dfsVisited) { // srcr -> source row, srcc -> source column
+// srcr -> source row, srcc -> source column
+function dfsCycleDetection(graphComponentMatrix, srcr, srcc, visited, dfsVisited) {
     visited[srcr][srcc] = true;
     dfsVisited[srcr][srcc] = true;
 
     // A1 -> [ [0, 1], [1, 0], [5, 10], ..... ]
     for (let children = 0; children < graphComponentMatrix[srcr][srcc].length; children++) {
-        let [nbrr, nbrc] = graphComponentMatrix[srcr][srcc][children]; // nbrr -> neighbour row, nbrc -> neighbour column
-
+        // nbrr -> neighbour row, nbrc -> neighbour column
+        let [nbrr, nbrc] = graphComponentMatrix[srcr][srcc][children];
         if (visited[nbrr][nbrc] === false) {
             let response = dfsCycleDetection(graphComponentMatrix, nbrr, nbrc, visited, dfsVisited);
             if (response === true) return true; // Found cycle so return immediately, no need to explore more path.
         }
-
         else if (visited[nbrr][nbrc] === true && dfsVisited[nbrr][nbrc] === true) {
           // Found cycle so return immediately, no need to explore more path.
           return true;
