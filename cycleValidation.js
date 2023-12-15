@@ -48,7 +48,7 @@ function dfsCycleDetection(graphComponentMatrix, srcr, srcc, visited, dfsVisited
         let [nbrr, nbrc] = graphComponentMatrix[srcr][srcc][children]; // nbrr -> neighbour row, nbrc -> neighbour column
 
         if (visited[nbrr][nbrc] = false) {
-            let response = dfsCycleDetection(graphComponentMatrix, crid, ccid, visited, dfsVisited);
+            let response = dfsCycleDetection(graphComponentMatrix, nbrr, nbrc, visited, dfsVisited);
             if (response == true) return true; // Found cycle so return immediately, no need to explore more path.
         }
 
