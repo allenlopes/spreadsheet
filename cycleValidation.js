@@ -29,11 +29,12 @@ function isGraphCyclic(graphComponentMatrix) {
 
     for (let i = 0; i < rows; i++){
         for(let j = 0; j < cols; j++){
-            let response = dfsCycleDetection(graphComponentMatrix, i, j, visited, dfsVisited);
-            if ( response == true) return true; // Found cycle so return immediately, no need to explore more path.
+            if (visited[i][j] === false) {
+                let response = dfsCycleDetection(graphComponentMatrix, i, j, visited, dfsVisited);
+                if (response == true) return true; // Found cycle so return immediately, no need to explore more path.
+            }
         }
     }
-
     return false;
 }
 
