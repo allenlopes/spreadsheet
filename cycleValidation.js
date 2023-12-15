@@ -45,15 +45,18 @@ function dfsCycleDetection(graphComponentMatrix, srcr, srcc, visited, dfsVisited
 
     // A1 -> [ [0, 1], [1, 0], [5, 10], ..... ]
     for (let children = 0; children < graphComponentMatrix[srcr][srcc].length; children++) {
-        let [crid, ccid] = graphComponentMatrix[srcr][srcc][children]; // crid -> child row id, ccid -> child column id
-        if (visited[crid][ccid] = false) {
+        let [nbrr, nbrc] = graphComponentMatrix[srcr][srcc][children]; // nbrr -> neighbour row, nbrc -> neighbour column
+
+        if (visited[nbrr][nbrc] = false) {
             let response = dfsCycleDetection(graphComponentMatrix, crid, ccid, visited, dfsVisited);
             if (response == true) return true; // Found cycle so return immediately, no need to explore more path.
         }
-        else if (visited[crid][ccid] == true && dfsVisited[crid][ccid] == true) { // Found cycle so return immediately, no need to explore more path.
+
+        else if (dfsVisited[nbrr][nbrc] == true) { // Found cycle so return immediately, no need to explore more path.
             return true;
         }
     }
 
     dfsVisited[srcr][srcc] = false;
+    return false;
 }
